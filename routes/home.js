@@ -15,6 +15,7 @@ module.exports = {
     const messages = html`
     <div style='text-align:center; margin-top: 40px'>
     <h3>${welcomeMessage}</h3>
+    <hr style='border:2px solid green; width: 40%'>
     <small>${apiMessage} </small>
     <br>
     <i>${status}</i>
