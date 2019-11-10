@@ -9,6 +9,7 @@
   "private": false,
   "devDependencies": {
     "chai": "^4.2.0",
+    "faker": "^4.1.0",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4"
   },
@@ -28,6 +29,7 @@
     "mongoose": "^5.7.9"
   },
   "scripts": {
-    "dev": "nodemon lib/index.js"
+    "dev": "NODE_ENV=development nodemon lib/index.js",
+    "test": ". ./tests/setup.sh && ./node_modules/.bin/mocha --recursive --timeout=10000 --exit tests"
   }
 }

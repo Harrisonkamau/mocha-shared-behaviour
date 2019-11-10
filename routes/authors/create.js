@@ -9,15 +9,22 @@ module.exports = {
   validate: {
     type: 'json',
     body: {
-      title: Joi.string().error(
-        new JoiValidationError('Title is a required field')
-      ),
-      description: Joi.string().error(
-        new JoiValidationError('Description is a required string')
+      name: Joi.string().error(
+        new JoiValidationError('Title is a required field'),
       ),
     },
   },
   handler: async (ctx) => {
-    ctx.body = 'hello world';
+    const { Author } = ctx.models;
+    const { name } = ctx.request.body;
+
+    const authors = await Author.find({ name });
+    ctx.assert(authors.length === 0, 403, `Author with name: '${name}' already exists`);
+
+    const newAuthor = await Author.create({ name });
+    await newAuthor.save();
+
+    ctx.body = newAuthor;
+    ctx.status = 201;
   }
 }
