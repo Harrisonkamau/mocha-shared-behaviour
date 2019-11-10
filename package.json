@@ -1,0 +1,33 @@
+{
+  "name": "mocha-shared-behaviour",
+  "version": "1.0.0",
+  "description": "Refactoring common test suites in Mocha/Chai",
+  "main": "index.js",
+  "repository": "git@github.com:Harrisonkamau/mocha-shared-behaviour.git",
+  "author": "Harrisonkamau <kamauharrison87@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4"
+  },
+  "dependencies": {
+    "common-tags": "^1.8.0",
+    "config": "^3.2.4",
+    "joi": "^14.3.1",
+    "joi-objectid": "^3.0.1",
+    "koa": "^2.11.0",
+    "koa-body-parser": "^1.1.2",
+    "koa-joi-router": "^6.0.0",
+    "koa-logger": "^3.2.1",
+    "koa-qs": "^2.0.0",
+    "koa-sslify": "^4.0.3",
+    "lodash": "^4.17.15",
+    "loggery": "^1.0.2",
+    "mongoose": "^5.7.9"
+  },
+  "scripts": {
+    "dev": "nodemon lib/index.js"
+  }
+}
